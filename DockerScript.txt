@@ -69,3 +69,39 @@
 */
 
 > du -mh
+
+
+
+1.7 Installing Things in Containers
+/*
+    Another thing we can do once we’re in a container’s shell is install new programs, or packages, that aren’t part of the base image.
+    Let’s install the fortunes package.
+*/
+
+> docker container exec -it elegant_noether /bin/bash
+
+// Type <apt-get install -y fortunes> to install the fortunes package.
+> apt-get install -y fortunes
+
+/*
+    Type </usr/games/fortune> If we see a random fortune displayed then we know the installation worked!
+*/
+
+> /usr/games/fortune
+
+
+
+1.8 Update the ENV in a Container
+/*
+    It’s kind of annoying to have to type /usr/games/ before the fortune command, so let’s update the PATH environment variable in the container so that
+    we don’t have to type all of that anymore.
+*/
+
+> docker container exec -it elegant_noether /bin/bash
+> PATH=$PATH:/usr/games/
+
+// Now type export PATH to save the updated PATH variable.
+> export PATH
+
+// To test if this worked, simply type fortune — if we see the random fortune message appear then we know the PATH variable is updated!
+> fortune

@@ -137,3 +137,8 @@
 
 > RUN apt-get update
 > RUN apt-get install -y fortunes
+
+// We can even combine multiple run statements on a single line, which is sometimes preferred to separate lines.
+// Remove the code on lines 3 and 4 and replace them with RUN apt-get update && apt-get install -y fortunes.
+
+> RUN apt-get update && apt-get install -y fortunes

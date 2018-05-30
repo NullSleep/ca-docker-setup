@@ -113,15 +113,12 @@
     In the previous level we created containers from pre-built base images. If we want to customize a base image before creating a container, we should
     use a Dockerfile.
 
-    The filename is important — it's always Dockerfile with a capital D.
-
-    We've created an empty Dockerfile that we can fill in.
-
-    The first line of a Dockerfile is usually the FROM keyword followed a base image name. Every other instruction in the Dockerfile following the FROM
-    instruction will create a new image that blends together everything in the base plus the modifications we're making in the rest of the Dockerfile.
-
-    Type FROM httpd:2.4 as the first line of the Dockerfile. This will base our custom image off of version 2.4 of the httpd image.
+    The filename is important — it's always Dockerfile with a capital D. We've created an empty Dockerfile that we can fill in.
 */
+
+// The first line of a Dockerfile is usually the FROM keyword followed a base image name. Every other instruction in the Dockerfile following the FROM
+// instruction will create a new image that blends together everything in the base plus the modifications we're making in the rest of the Dockerfile.
+// Type FROM httpd:2.4 as the first line of the Dockerfile. This will base our custom image off of version 2.4 of the httpd image.
 
 > FROM httpd:2.4
 
@@ -148,3 +145,11 @@
 // Type LABEL maintainer="moby-dock@example.com". (Did you know Moby Dock is the name of the Docker whale?)
 
 > LABEL maintainer="moby-dock@example.com"
+
+
+
+2.3 Building an Image From a Dockerfile
+/*
+    Great, the Dockerfile is ready to go. We can use that Dockerfile to build a new image with the docker image build command.
+    The --tag command is a useful option to pass to docker build that lets us specify the name of our new image followed by a version number.
+*/

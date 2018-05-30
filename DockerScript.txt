@@ -130,3 +130,10 @@
 // Type EXPOSE 80 on line 2.
 
 > EXPOSE 80
+
+// Remember how in the last level we had to docker container exec to install fortunes? Well, with a Dockerfile we can run any commands as the image is being
+// built with the RUN command.
+// Type RUN apt-get update on line 3 and RUN apt-get install -y fortunes on line 4
+
+> RUN apt-get update
+> RUN apt-get install -y fortunes

@@ -124,3 +124,9 @@
 */
 
 > FROM httpd:2.4
+
+// Next, we can use the Dockerfile to expose a port inside of its associated container. Note that we'll still need to map ports between the host
+// and container when we run docker container run, but this line will let the image know which ports inside of the container should become available.
+// Type EXPOSE 80 on line 2.
+
+> EXPOSE 80

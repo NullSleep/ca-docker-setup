@@ -156,10 +156,21 @@
 
 // Run the docker image build command with the --tag option and name the image web-server followed by a : and the number 1.0.
 // (The number that comes after the colon sets the version number of the image.)
-//End the command with a single . so it knows to look for the Dockerfile in the same folder that the command is run in.
+// End the command with a single . so it knows to look for the Dockerfile in the same folder that the command is run in.
 
 > docker image build --tag web-server:1.0 .
 
 // Now type docker image ls to get a list of all images on your computer. In this list, we'll see our newly created web-server image.
 
 > docker image ls
+
+
+
+2.4 Running a Container From a Custom Image
+/*
+    Now we can create a container with the new web-server image.
+*/
+
+// Let's create a container with the new image we just made that meets the following criteria:
+// Uses the web-server version 1.0 image
+// Maps port 80 on the host to 80 on the container.

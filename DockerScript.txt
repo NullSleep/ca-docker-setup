@@ -105,3 +105,22 @@
 
 // To test if this worked, simply type fortune — if we see the random fortune message appear then we know the PATH variable is updated!
 > fortune
+
+
+
+2.2 Your First Dockerfile
+/*
+    In the previous level we created containers from pre-built base images. If we want to customize a base image before creating a container, we should
+    use a Dockerfile.
+
+    The filename is important — it's always Dockerfile with a capital D.
+
+    We've created an empty Dockerfile that we can fill in
+
+    The first line of a Dockerfile is usually the FROM keyword followed a base image name. Every other instruction in the Dockerfile following the FROM
+    instruction will create a new image that blends together everything in the base plus the modifications we're making in the rest of the Dockerfile.
+
+    Type FROM httpd:2.4 as the first line of the Dockerfile. This will base our custom image off of version 2.4 of the httpd image.
+*/
+
+> FROM httpd:2.4

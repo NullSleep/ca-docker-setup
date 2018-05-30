@@ -115,7 +115,7 @@
 
     The filename is important — it's always Dockerfile with a capital D.
 
-    We've created an empty Dockerfile that we can fill in
+    We've created an empty Dockerfile that we can fill in.
 
     The first line of a Dockerfile is usually the FROM keyword followed a base image name. Every other instruction in the Dockerfile following the FROM
     instruction will create a new image that blends together everything in the base plus the modifications we're making in the rest of the Dockerfile.
@@ -142,3 +142,9 @@
 // Remove the code on lines 3 and 4 and replace them with RUN apt-get update && apt-get install -y fortunes.
 
 > RUN apt-get update && apt-get install -y fortunes
+
+// Since we can distribute Dockerfiles to other developers, it's a good idea to put our contact information in them with the LABEL instruction.
+// LABEL accepts key-value pairs in the form of key="value". Let's label the maintainer of this image.
+// Type LABEL maintainer="moby-dock@example.com". (Did you know Moby Dock is the name of the Docker whale?)
+
+> LABEL maintainer="moby-dock@example.com"

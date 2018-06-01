@@ -176,3 +176,19 @@
 // Maps port 80 on the host to 80 on the container.
 
 > docker container run --publish 80:80 web-server:1.0
+
+
+
+3.2 Copying Files into a Running Container
+/*
+    One way to get a file into a container is with the docker container cp command. Here, we’ve got a container that’s already running with the
+    name elegant_noether.
+
+    Like many Unix commands, the order of the arguments after the cp are important. First, we write a path to the location of the file we want to
+    copy on your host machine, and after that we write the container ID, followed by a colon, followed by a path in the container where we want the
+    file to be copied to.
+*/
+
+// Type curl localhost:80/page.html to confirm that the page.html file doesn't exist already.
+
+> curl localhost:80/page.html

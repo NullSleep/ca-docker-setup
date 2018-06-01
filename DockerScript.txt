@@ -192,3 +192,7 @@
 // Type curl localhost:80/page.html to confirm that the page.html file doesn't exist already.
 
 > curl localhost:80/page.html
+
+// Type docker container cp page.html elegant_noether:/usr/local/apache2/htdocs/.
+// Notice the order that the commands must be written: First, the path to the file on your host machine, then the container's ID followed by a colon,
+// then the path to the file in the container.
